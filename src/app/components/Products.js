@@ -7,9 +7,9 @@ const Products = ({ product, id }) => {
         <div className="  rounded    shadow-lg  ">
           <div
             key={id}
-            className="bg-white rounded-lg overflow-hidden w-80 h-90  p shadow-lg hover:drop-shadow-xl/30 transition-all      hover:scale-[1.1]     cursor-pointer     duration-500        drop-shadow-xl/10      "
+            className="bg-white rounded-lg overflow-hidden w-80 h-100  p shadow-lg hover:drop-shadow-xl/30 transition-all      hover:scale-[1.1]     cursor-pointer     duration-500        drop-shadow-xl/10      "
           >
-            <img src={product.image} className="w-full h-60 object-cover" />
+            <img src={product.image} className="w-full h-80 object-cover " />
             <div className="p-4">
               <h3 className="text-lg font-semibold text-gray-800">
                 {product.productName}
