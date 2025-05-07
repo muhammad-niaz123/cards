@@ -8,7 +8,7 @@ const Products = ({ product, id }) => {
           key={id}
           className="bg-white rounded-lg overflow-hidden w-80 h-100 shadow-lg hover:drop-shadow-xl/30 transition-all hover:scale-[1.1] cursor-pointer duration-500 drop-shadow-xl/10"
         >
-          <Image
+          <img
             src={product.image}
             alt={product.productName || "Product image"}
             width={320}

@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import Filter from "./components/Filter";
 
-const Page = () => {
+const page = () => {
 
   const [category, setcategory] = useState("all");
 
@@ -116,4 +116,4 @@ console.log(search)
   );
 };
 
-export default Page;
+export default page;
