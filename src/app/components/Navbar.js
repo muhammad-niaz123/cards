@@ -14,7 +14,7 @@ const Navbar = ({ search,   setsearch }) => {
 
 
 <div className='flex items-center  space-between  uppercase  text-[22px] lg:text-[25px] gap-5  drop-shadow-xl/50       
-     relative   bg-black/80   shadow-lg  p-7 pt-4 pb-4 lg:flex-row    md:pl-17 flex-col'
+     relative   bg-black/70  navbar     shadow-lg  p-7 pt-4 pb-4 lg:flex-row    md:pl-17 flex-col'
 
 >
 

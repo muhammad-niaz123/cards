@@ -4,7 +4,7 @@ const Filter = ({ setcategory }) => {
   return (
     <>
       <button
-        className=" bg-black/80      md:p-3 rounded  p-2   drop-shadow-xl/50        cursor-pointer    "
+        className=" bg-black/70      md:p-3 rounded  p-2   drop-shadow-xl/50        cursor-pointer    "
         onClick={() => setcategory("men")}
       >
         {" "}
@@ -12,7 +12,7 @@ const Filter = ({ setcategory }) => {
       </button>
 
       <button
-        className="  bg-black/80 md:p-3 rounded p-2   drop-shadow-xl/50    cursor-pointer     "
+        className="  bg-black/70 md:p-3 rounded p-2   drop-shadow-xl/50    cursor-pointer     "
         onClick={() => setcategory("women")}
       >
         {" "}
@@ -20,7 +20,7 @@ const Filter = ({ setcategory }) => {
       </button>
 
       <button
-        className="bg-black/80 md:p-3 rounded p-2   drop-shadow-xl/50      cursor-pointer      "
+        className="bg-black/70 md:p-3 rounded p-2   drop-shadow-xl/50      cursor-pointer      "
         onClick={() => setcategory("kids")}
       >
         {" "}
@@ -28,7 +28,7 @@ const Filter = ({ setcategory }) => {
       </button>
 
       <button
-        className="bg-black/80 md:p-3 rounded p-2  drop-shadow-xl/50          cursor-pointer      "
+        className="bg-black/70 md:p-3 rounded p-2  drop-shadow-xl/50          cursor-pointer      "
         onClick={() => setcategory("all")}
       >
         {" "}

@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import Filter from "./components/Filter";
 
-const Page = () => {
+const page = () => {
 
   const [category, setcategory] = useState("all");
 
@@ -101,7 +101,7 @@ console.log(search)
           
         </div>
 
-        <div className="flex  flex-wrap items-center w-[100%]  justify-around       ">
+        <div className="flex  flex-wrap items-center w-[100%]  justify-center  gap-4       ">
           {filtered.map((product, i) => (
             <div key={i}>
               <Products product={product} id={i} />
@@ -116,4 +116,4 @@ console.log(search)
   );
 };
 
-export default Page;
+export default page;
