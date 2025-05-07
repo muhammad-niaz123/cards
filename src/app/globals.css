@@ -29,3 +29,6 @@ body::-webkit-scrollbar {
   display: none; 
 }
 
+.buttonactive{
+  background: black;
+}
