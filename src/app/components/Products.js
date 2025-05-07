@@ -1,7 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Products = ({ product, id }) => {
   return (
+
+<Link href={`/product/${product.slug}`} > 
+
     <div className="p-10 pt-6 flex items-center   h-fit">
       <div className="rounded shadow-lg">
         <div
@@ -24,6 +28,7 @@ const Products = ({ product, id }) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 

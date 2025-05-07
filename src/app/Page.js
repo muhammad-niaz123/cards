@@ -1,119 +1,119 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import products from "../../public/data/products";
-import Navbar from "./components/Navbar";
-import Products from "./components/Products";
-import Filter from "./components/Filter";
+  "use client";
+  import React, { useEffect, useState } from "react";
+import products from "./product";
+  import Navbar from "./components/Navbar";
+  import Products from "./components/Products";
+  import Filter from "./components/Filter";
 
-const page = () => {
+  const page = () => {
 
-  const [category, setcategory] = useState("all");
+    const [category, setcategory] = useState("all");
 
-  const [filtered, setfiltered] = useState(products);
-
-
-  
-const [search , setsearch ] = useState("")
+    const [filtered, setfiltered] = useState(products);
 
 
-const [searchfilter    , setsearchfilter    ] = useState(products)
+    
+  const [search , setsearch ] = useState("")
 
 
-/*
-
-useEffect(() => {
-  let result = products;
-
-  // Filter by category
-  if (category !== "all") {
-    result = result.filter(
-      (product) =>
-        product.category.toLowerCase() === category.toLowerCase()
-    );
-  }
-
-  // Filter by search
-  if (search.trim() !== "") {
-    result = result.filter((product) =>
-      product.productName.toLowerCase().includes(search.toLowerCase())
-    );
-  }
+  const [searchfilter    , setsearchfilter    ] = useState(products)
 
 
-
-
-  setfiltered(result);
-}, [category, search]);
-
-
-*/
-
-
-
-
-useEffect(()=>{
-
-
-const searchproduct = searchfilter.filter((product,i)=> product.productName.toLowerCase().includes(search.toLowerCase())
-
-
-
-
-)
-
-setfiltered(searchproduct)
-
-
-
-} ,[search,searchfilter])
-
-
-
+  /*
 
   useEffect(() => {
-    if (category === "all") {
-      setfiltered(products);
-    } else {
-      const filteredProducts = products.filter(
-        (product) => product.category.toLowerCase() === category.toLowerCase()
+    let result = products;
+
+    // Filter by category
+    if (category !== "all") {
+      result = result.filter(
+        (product) =>
+          product.category.toLowerCase() === category.toLowerCase()
       );
-      setfiltered(filteredProducts);
     }
-  }, [category]);
+
+    // Filter by search
+    if (search.trim() !== "") {
+      result = result.filter((product) =>
+        product.productName.toLowerCase().includes(search.toLowerCase())
+      );
+    }
 
 
-console.log(search)
+
+
+    setfiltered(result);
+  }, [category, search]);
+
+
+  */
 
 
 
 
-  return (
+  useEffect(()=>{
 
 
-    <>
+  const searchproduct = searchfilter.filter((product,i)=> product.productName.toLowerCase().includes(search.toLowerCase())
 
-      <div className="    bg-amber-50   ">
-        <Navbar   setsearch={setsearch}  search={search}           />
 
-        <div className="flex items-center gap-6 justify-center  md:gap-10 w-[100%] md:mt-5 flex-wrap p-8 md:pl-15    text-xl     ">
 
-          <Filter setcategory={setcategory}       />
-          
+
+  )
+
+  setfiltered(searchproduct)
+
+
+
+  } ,[search,searchfilter])
+
+
+
+
+    useEffect(() => {
+      if (category === "all") {
+        setfiltered(products);
+      } else {
+        const filteredProducts = products.filter(
+          (product) => product.category.toLowerCase() === category.toLowerCase()
+        );
+        setfiltered(filteredProducts);
+      }
+    }, [category]);
+
+
+  console.log(search)
+
+
+
+
+    return (
+
+
+      <>
+
+        <div className="    bg-amber-50   ">
+          <Navbar   setsearch={setsearch}  search={search}           />
+
+          <div className="flex items-center gap-6 justify-center  md:gap-10 w-[100%] md:mt-5 flex-wrap p-8 md:pl-15    text-xl     ">
+
+            <Filter setcategory={setcategory}       />
+            
+          </div>
+
+          <div className="flex  flex-wrap items-center w-[100%]  justify-center  gap-4       ">
+            {filtered.map((product, i) => (
+              <div key={i}>
+                <Products product={product} id={i} />
+              </div>
+            ))}
+          </div>
         </div>
-
-        <div className="flex  flex-wrap items-center w-[100%]  justify-center  gap-4       ">
-          {filtered.map((product, i) => (
-            <div key={i}>
-              <Products product={product} id={i} />
-            </div>
-          ))}
-        </div>
-      </div>
-      
-    </>
+        
+      </>
 
 
-  );
-};
+    );
+  };
 
-export default page;
+  export default page;

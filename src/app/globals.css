@@ -32,3 +32,8 @@ body::-webkit-scrollbar {
 .buttonactive{
   background: black;
 }
+
+body{
+  background-color: white;
+
+}
