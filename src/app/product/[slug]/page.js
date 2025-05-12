@@ -1,16 +1,26 @@
   "use client"
   import products from "@/app/product";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 
 export default function ProductPage({ params }) {
+
+const select = useSelector((data)=>data.products)
+
+
+
+
+
 //  const  {slug} = params;
 
 const [product, setproduct] = useState([])
 
 useEffect(()=>{
 
-const product = products.find((product,i)=>product.slug === params.slug)    
+const product = select.find((product,i)=>product.slug === params.slug)    
+
+console.log(product)
 
 
 setproduct(product)

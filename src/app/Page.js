@@ -4,20 +4,29 @@ import products from "./product";
   import Navbar from "./components/Navbar";
   import Products from "./components/Products";
   import Filter from "./components/Filter";
+import Adduser from "./components/Adduser";
+import Addproduct from "./components/Addproduct";
+import { useSelector } from "react-redux";
 
   const page = () => {
 
+
+    const data = useSelector((data)=>data.products)
+
+    
+
+
     const [category, setcategory] = useState("all");
 
-    const [filtered, setfiltered] = useState(products);
-
+    const [filtered, setfiltered] = useState(data);
 
     
   const [search , setsearch ] = useState("")
 
 
-  const [searchfilter    , setsearchfilter    ] = useState(products)
+  const [searchfilter    , setsearchfilter    ] = useState(data)
 
+  
 
   /*
 
@@ -47,14 +56,14 @@ import products from "./product";
 
 
   */
-
+  
 
 
 
   useEffect(()=>{
 
 
-  const searchproduct = searchfilter.filter((product,i)=> product.productName.toLowerCase().includes(search.toLowerCase())
+  const searchproduct = data.filter((product,i)=> product.productName.toLowerCase().includes(search.toLowerCase())
 
 
 
@@ -65,21 +74,21 @@ import products from "./product";
 
 
 
-  } ,[search,searchfilter])
+  } ,[search,data])
 
 
 
 
     useEffect(() => {
       if (category === "all") {
-        setfiltered(products);
+        setfiltered(data);
       } else {
-        const filteredProducts = products.filter(
+        const filteredProducts = data.filter(
           (product) => product.category.toLowerCase() === category.toLowerCase()
         );
         setfiltered(filteredProducts);
       }
-    }, [category]);
+    }, [category,data]);
 
 
   console.log(search)
@@ -93,13 +102,21 @@ import products from "./product";
       <>
 
         <div className="    bg-amber-50   ">
+
           <Navbar   setsearch={setsearch}  search={search}           />
 
+          <Adduser/>
+
+          <Addproduct/>
+
           <div className="flex items-center gap-6 justify-center  md:gap-10 w-[100%] md:mt-5 flex-wrap p-8 md:pl-15    text-xl     ">
+
 
             <Filter setcategory={setcategory}       />
             
           </div>
+
+      
 
           <div className="flex  flex-wrap items-center w-[100%]  justify-center  gap-4       ">
             {filtered.map((product, i) => (
